@@ -6,11 +6,12 @@
   ],
   "license": "MIT",
   "ignore": [
-    ".*",
-    "app"
+    "**/.*",
+    "app",
     "node_modules",
     "bower_components",
     "test",
     "demos"
-  ]
+  ],
+  "dependencies": {}
 }
