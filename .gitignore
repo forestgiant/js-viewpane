@@ -26,7 +26,6 @@ atlassian-ide-plugin.xml
 
 doc-build/
 /build/
-/dist/
 
 /test/visual/**/diff.png
 *-test-results.xml
