@@ -1,18 +1,16 @@
 {
   "name": "js-viewpane",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
-    "Sascha Goldhofer <post@saschagoldhofer.de>"
+    "Sascha Goldhofer"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
-    "**/.*",
+    ".*",
     "app"
     "node_modules",
     "bower_components",
     "test",
     "demos"
-  ],
-  "dependencies": {}
+  ]
 }
