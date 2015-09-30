@@ -3,12 +3,15 @@
 > Feelgood pan and zoomable container
 
 
+`bower install js-viewpane`
+
+
 # api
 
 
 ```javascript
-    
-    var viewpane = new Viewpane($camera, $viewpane, options);
+
+    var viewpane = new Viewpane.default($camera, $viewpane, options);
 
 ```
 
