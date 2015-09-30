@@ -4,6 +4,7 @@
   "authors": [
     "Sascha Goldhofer"
   ],
+  "main": "lib/index.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
