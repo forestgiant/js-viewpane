@@ -11,7 +11,7 @@
 
 ```javascript
 
-    var viewpane = new Viewpane.default($camera, $viewpane, options);
+    var viewpane = new Viewpane($camera, $viewpane, options);
 
 ```
 
