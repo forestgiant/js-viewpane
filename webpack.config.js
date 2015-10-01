@@ -18,12 +18,12 @@ module.exports = {
     module: {
         // configure loaders
         loaders: [
-            {
-                test: /(app|lib|test).*\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: "babel"
-                // loader: 'babel?optional[]=runtime'
-            },
+            // {
+            //     test: /(app|lib|test).*\.js$/,
+            //     exclude: /(node_modules|bower_components)/,
+            //     loader: "babel"
+            //     // loader: 'babel?optional[]=runtime'
+            // },
             {
                 test: /(app|lib|test).*\.html/,
                 loader: "html"
