@@ -63,6 +63,11 @@ being in 3D space, enabling perspective experiments with css or js.
 ```
 
 
+## requirements
+
+- [support of 3d transforms](http://caniuse.com/#feat=transforms3d)
+
+
 ## performance
 
 - ensure images are a multiple of 2 (i.e. use 2048x1024, but NOT 2048x1025). Especially on iOS
