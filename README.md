@@ -12,10 +12,26 @@ being in 3D space, enabling perspective experiments with css or js.
 
 ## usage
 
+```css
+
+    #camera {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;    
+    }
+
+    #viewpane {
+        position: absolute;
+        transform-style: preserve-3d
+    }
+```
+
 
 ```html
-    <div id="camera" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
-        <div id="viewpane" style="position: absolute; transform-style: preserve-3d"></div>
+
+    <div id="camera">
+        <div id="viewpane"></div>
     </div>
 ```
 
