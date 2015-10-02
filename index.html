@@ -8,6 +8,14 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <script type="text/javascript" src="javascripts/viewpane.js"></script>
+    <style type="text/css">
+
+        section.demo {
+
+            margin-top: 48px;
+        }
+
+    </style>
 
     <title>Viewpane</title>
 </head>
@@ -19,7 +27,7 @@
             <a id="forkme_banner" href="https://github.com/sagold/js-viewpane">View on GitHub</a>
 
             <h1 id="project_title">Javascript Viewpane</h1>
-            <h2 id="project_tagline">a simple feelgood pan and zoomable container</h2>
+            <h2 id="project_tagline">a simple, feelgood, pan and zoomable HTML container</h2>
 
             <section id="downloads">
                 <a class="zip_download_link" href="https://github.com/sagold/js-viewpane/zipball/master">Download this project as a .zip file</a>
@@ -33,100 +41,121 @@
     <div id="main_content_wrap" class="outer">
         <section id="main_content" class="inner">
 
-            <p></p>
+            <p>
+                Here are some demos of <em>js-viewpane</em>. Checkout the source code of this page to see details about
+                js-viewpane-options, required css styles and its dom structure.
+            </p>
 
-            <h3>
-                <a id="testpage" class="anchor" href="#testpage" aria-hidden="true">
-                    <span class="octicon octicon-link"></span>
-                </a>
-
-                Demo: Fit viewpane to largest dimension
-            </h3>
-            <!--
-
-
-				DEMO: FIT LARGEST DIMENSION
-
-
-            -->
-            <style type="text/css">
-	            #js-fit-largest-camera {
-	                position: relative;
-	                overflow: hidden;
-	                width: 100%;
-	                height: 300px;
-	                box-sizing: border-box;
-	                border: 1px solid #ccc;
-	            }
-	            #js-fit-largest-viewpane {
-	                position: absolute;
-	                width: 2048px;
-	                height: 1364px;
-	                background: #fff url("./images/city.jpg") no-repeat;
-	            }
-            </style>
-
-            <div id="js-fit-largest-camera">
-                <div id="js-fit-largest-viewpane"></div>
-            </div>
-
-            <script type="text/javascript">
-	            window.addEventListener("DOMContentLoaded", function() {
-	                var viewpane = new Viewpane("js-fit-largest-camera", "js-fit-largest-viewpane", {});
-	                viewpane.setPosition(Viewpane.Vector.create(-690, -530, -2500));
-	                viewpane.repaint();
-	            });
-            </script>
+            <p>
+                Install js-viewpane via <code>bower install viewpane</code> and link the source code by
+                <br />
+                <code>
+                    &lt;script src="./bower_components/viewpane/dist/viewpane.js"&gt;&lt;/script&gt;
+                </code>
+            </p>
 
 
+            <section class="demo">
+                <h3>
+                    <a class="anchor" href="#fitlargest" aria-hidden="true">
+                        <span class="octicon octicon-link"></span>
+                    </a>
 
-            <h3>
-                <a id="testpage" class="anchor" href="#testpage" aria-hidden="true">
-                    <span class="octicon octicon-link"></span>
-                </a>
-
-
-                Demo: Fit viewpane to both dimensions
-            </h3>
-            <!--
-
-
-				DEMO: FIT BOTH DIMENSIONS
+                    Fit viewpane to largest dimensions
+                </h3>
+                <!--
 
 
-            -->
-            <style type="text/css">
-	            #js-fit-both-camera {
-	                position: relative;
-	                overflow: hidden;
-	                width: 100%;
-	                height: 660px;
-	                box-sizing: border-box;
-	                border: 1px solid #ccc;
-	            }
-	            #js-fit-both-viewpane {
-	                position: absolute;
-	                width: 2048px;
-	                height: 1364px;
-	                background: #fff url("./images/city.jpg") no-repeat;
-	            }
-            </style>
-
-            <div id="js-fit-both-camera">
-                <div id="js-fit-both-viewpane"></div>
-            </div>
-
-            <script type="text/javascript">
-	            window.addEventListener("DOMContentLoaded", function() {
-	                var viewpane = new Viewpane("js-fit-both-camera", "js-fit-both-viewpane", {
-	                	typeOfFocus: "fitBothDimensions"
-	                });
-	                viewpane.setPosition(Viewpane.Vector.create(-690, -330, -1000));
-	                viewpane.repaint();
-	            });
-            </script>
+    				DEMO: FIT LARGEST DIMENSION
 
 
+                -->
+                <style type="text/css">
+    	            #js-fit-largest-camera {
+    	                position: relative;
+    	                overflow: hidden;
+    	                width: 100%;
+    	                height: 300px;
+    	                box-sizing: border-box;
+    	                border: 1px solid #ccc;
+    	            }
+    	            #js-fit-largest-viewpane {
+    	                position: absolute;
+    	                width: 2048px;
+    	                height: 1364px;
+    	                background: #fff url("./images/city.jpg") no-repeat;
+    	            }
+                </style>
+
+                <div id="js-fit-largest-camera">
+                    <div id="js-fit-largest-viewpane"></div>
+                </div>
+
+                <script type="text/javascript">
+    	            window.addEventListener("DOMContentLoaded", function() {
+    	                var viewpane = new Viewpane("js-fit-largest-camera", "js-fit-largest-viewpane", {});
+    	                viewpane.setPosition(Viewpane.Vector.create(-690, -530, -2500));
+    	                viewpane.repaint();
+    	            });
+                </script>
+                <!--
+
+                    EOD
+
+                -->
+            </section>
+
+
+            <section class="demo">
+                <h3>
+                    <a class="anchor" href="#fitboth" aria-hidden="true">
+                        <span class="octicon octicon-link"></span>
+                    </a>
+
+                    Fit viewpane to both dimensions
+                </h3>
+                <!--
+
+
+    				DEMO: FIT BOTH DIMENSIONS
+
+
+                -->
+                <style type="text/css">
+    	            #js-fit-both-camera {
+    	                position: relative;
+    	                overflow: hidden;
+    	                width: 100%;
+    	                height: 660px;
+    	                box-sizing: border-box;
+    	                border: 1px solid #ccc;
+    	            }
+    	            #js-fit-both-viewpane {
+    	                position: absolute;
+    	                width: 2048px;
+    	                height: 1364px;
+    	                background: #fff url("./images/city.jpg") no-repeat;
+    	            }
+                </style>
+
+                <div id="js-fit-both-camera">
+                    <div id="js-fit-both-viewpane"></div>
+                </div>
+
+                <script type="text/javascript">
+    	            window.addEventListener("DOMContentLoaded", function() {
+    	                var viewpane = new Viewpane("js-fit-both-camera", "js-fit-both-viewpane", {
+    	                	typeOfFocus: "fitBothDimensions"
+    	                });
+    	                viewpane.setPosition(Viewpane.Vector.create(-690, -330, -1000));
+    	                viewpane.repaint();
+    	            });
+                </script>
+                <!--
+
+                    EOD
+
+                -->
         </section>
     </div>
 
@@ -134,7 +163,7 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
         <footer class="inner">
-            <p class="copyright">Js-viewpane maintained by <a href="https://github.com/sagold">sagold</a>
+            <p class="copyright">js-viewpane maintained by <a href="https://github.com/sagold">sagold</a>
             </p>
             <p>Published with <a href="https://pages.github.com">GitHub Pages</a>
             </p>
