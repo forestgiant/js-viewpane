@@ -1,7 +1,7 @@
 "use strict";
 
-import html from "./support/html";
-import geo from "../lib/perspective";
+var html = require("./support/html");
+var perspective = require("./perspective");
 
 
 var Tolerance = 0.0001;
@@ -42,7 +42,7 @@ describe("perspective", function () {
             setPosition(0, 0, -500);
             setCameraPosition(0, 0, 1000);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.eq(measure2D.x);
@@ -53,7 +53,7 @@ describe("perspective", function () {
             setPosition(0, 0, 750);
             setCameraPosition(0, 0, 1000);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.eq(measure2D.x);
@@ -64,7 +64,7 @@ describe("perspective", function () {
             setCameraPosition(300, 300, 1000);
             setPosition(0, 0, -500);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.eq(measure2D.x);
@@ -75,7 +75,7 @@ describe("perspective", function () {
             setCameraPosition(300, 300, 1000);
             setPosition(100, 150, -500);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.be.closeTo(measure2D.x, Tolerance);
@@ -86,7 +86,7 @@ describe("perspective", function () {
             setCameraPosition(300, 300, 1000);
             setPosition(300, 300, -1000);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.eq(measure2D.x);
@@ -100,7 +100,7 @@ describe("perspective", function () {
             setCameraPosition(300, 300, 1000);
             setPosition(100, 150, -500);
 
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
             var measure2D = html.getProjection();
             expect(point2D.x).to.be.closeTo(measure2D.x, Tolerance);
@@ -114,7 +114,7 @@ describe("perspective", function () {
         it("should point in 3d space", function () {
             setCameraPosition(111, 222, 1000);
 
-            var point3D = geo.getInverseProjection(position, camera, -500);
+            var point3D = perspective.getInverseProjection(position, camera, -500);
 
             expect(point3D.x).to.not.eq(0);
             expect(point3D.y).to.not.eq(0);
@@ -124,9 +124,9 @@ describe("perspective", function () {
         it("should invert projection", function () {
             setCameraPosition(111, 222, 1000);
             setPosition(333, -111, 500);
-            var point2D = geo.getProjection(position, camera);
+            var point2D = perspective.getProjection(position, camera);
 
-            var point3D = geo.getInverseProjection({x: point2D.x, y: point2D.y}, camera, 500);
+            var point3D = perspective.getInverseProjection({x: point2D.x, y: point2D.y}, camera, 500);
 
             expect(point3D.x).to.eq(333);
             expect(point3D.y).to.eq(-111);
@@ -143,7 +143,7 @@ describe("perspective", function () {
             var startPosition2D = html.getProjection();
             var movement = {x: 130, y: -90};
 
-            var point3D = geo.moveVisual(position, camera, movement);
+            var point3D = perspective.moveVisual(position, camera, movement);
             setPosition(point3D.x, point3D.y, point3D.z);
 
             var position2D = html.getProjection();
@@ -155,7 +155,7 @@ describe("perspective", function () {
             setCameraPosition(111, 222, 1000);
             setPosition(333, -111, 0);
 
-            var point3D = geo.moveVisual(position, camera, {x: 130, y: -90});
+            var point3D = perspective.moveVisual(position, camera, {x: 130, y: -90});
 
             expect(point3D.x).to.eq(333 + 130);
             expect(point3D.y).to.eq(-111 - 90);
@@ -168,7 +168,7 @@ describe("perspective", function () {
             setCameraPosition(111, 222, 1000);
             setPosition(333, -111, 0);
 
-            var point3D = geo.moveVisual(position, camera, {x: 130, y: -90});
+            var point3D = perspective.moveVisual(position, camera, {x: 130, y: -90});
 
             expect(point3D.x).to.eq(333 + 130);
             expect(point3D.y).to.eq(-111 - 90);
@@ -182,7 +182,7 @@ describe("perspective", function () {
             setCameraPosition(0, 0, 500);
             setPosition(0, 0, -500);
 
-            var point3D = geo.zoomAt(position, camera, {x: 0, y: 0}, -300);
+            var point3D = perspective.zoomAt(position, camera, {x: 0, y: 0}, -300);
             setPosition(point3D.x, point3D.y, point3D.z);
 
             var measure2D = html.getProjection();
@@ -195,7 +195,7 @@ describe("perspective", function () {
             setPosition(0, 0, 0);
             var startMeasure2D = html.getProjection();
 
-            var point3D = geo.zoomAt(position, camera, {x: 0, y: 0}, -300);
+            var point3D = perspective.zoomAt(position, camera, {x: 0, y: 0}, -300);
             setPosition(point3D.x, point3D.y, point3D.z);
 
             var measure2D = html.getProjection();
@@ -210,7 +210,7 @@ describe("perspective", function () {
             setPosition(-250, 100, -200);
             var startMeasure2D = html.getProjection();
 
-            var point3D = geo.zoomAt(position, camera, {x: startMeasure2D.right, y: startMeasure2D.bottom}, -300);
+            var point3D = perspective.zoomAt(position, camera, {x: startMeasure2D.right, y: startMeasure2D.bottom}, -300);
             setPosition(point3D.x, point3D.y, point3D.z);
 
             var measure2D = html.getProjection();
@@ -226,7 +226,7 @@ describe("perspective", function () {
             setPosition(-250, 100, -200);
             var startMeasure2D = html.getProjection();
 
-            var point3D = geo.zoomAt(position, camera, {x: startMeasure2D.right, y: startMeasure2D.bottom}, -300);
+            var point3D = perspective.zoomAt(position, camera, {x: startMeasure2D.right, y: startMeasure2D.bottom}, -300);
             setPosition(point3D.x, point3D.y, point3D.z);
 
             var measure2D = html.getProjection();

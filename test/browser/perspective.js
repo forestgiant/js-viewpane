@@ -1,10 +1,10 @@
 "use strict";
 
 
-import vector from "../../lib/common/vector";
+var vector = require("../../lib/common/vector");
 
 
-export default {
+module.exports = {
 
     moveVisual: function (position, camera, movement) {
         var point3D = vector.create();
@@ -70,5 +70,5 @@ export default {
     getInverseProjection: function (point2D, camera, zPosition) {
         var point3D = vector.create(point2D.x, point2D.y, 0);
         return this.zoomAt(point3D, camera, point2D, zPosition);
-    },
+    }
 };

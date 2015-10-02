@@ -1,6 +1,6 @@
 "use strict";
 
-export default {
+module.exports = {
 
     $camera: null,
     $viewpane: null,
