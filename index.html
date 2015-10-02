@@ -1,52 +1,146 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Js-viewpane : feelgood pan and zoomable container">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script type="text/javascript" src="javascripts/viewpane.js"></script>
 
-    <title>Js-viewpane</title>
-  </head>
+    <title>Viewpane</title>
+</head>
 
-  <body>
-
+<body>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sagold/js-viewpane">View on GitHub</a>
+            <a id="forkme_banner" href="https://github.com/sagold/js-viewpane">View on GitHub</a>
 
-          <h1 id="project_title">Js-viewpane</h1>
-          <h2 id="project_tagline">feelgood pan and zoomable container</h2>
+            <h1 id="project_title">Javascript Viewpane</h1>
+            <h2 id="project_tagline">a simple feelgood pan and zoomable container</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sagold/js-viewpane/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sagold/js-viewpane/tarball/master">Download this project as a tar.gz file</a>
+                <a class="zip_download_link" href="https://github.com/sagold/js-viewpane/zipball/master">Download this project as a .zip file</a>
+                <a class="tar_download_link" href="https://github.com/sagold/js-viewpane/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
 
+
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a id="testpage" class="anchor" href="#testpage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testpage</h3>
+        <section id="main_content" class="inner">
 
-<p></p>
-      </section>
+            <p></p>
+
+            <h3>
+                <a id="testpage" class="anchor" href="#testpage" aria-hidden="true">
+                    <span class="octicon octicon-link"></span>
+                </a>
+
+                Demo: Fit viewpane to largest dimension
+            </h3>
+            <!--
+
+
+				DEMO: FIT LARGEST DIMENSION
+
+
+            -->
+            <style type="text/css">
+	            #js-fit-largest-camera {
+	                position: relative;
+	                overflow: hidden;
+	                width: 660px;
+	                height: 200px;
+	                box-sizing: border-box;
+	                border: 1px solid #ccc;
+	            }
+	            #js-fit-largest-viewpane {
+	                position: absolute;
+	                width: 2048px;
+	                height: 1364px;
+	                background: #fff url("./images/city.jpg") no-repeat;
+	            }
+            </style>
+
+            <div id="js-fit-largest-camera">
+                <div id="js-fit-largest-viewpane"></div>
+            </div>
+
+            <script type="text/javascript">
+	            window.addEventListener("DOMContentLoaded", function() {
+	                var viewpane = new Viewpane("js-fit-largest-camera", "js-fit-largest-viewpane", {});
+	                viewpane.setPosition(Viewpane.Vector.create(-690, -550, -5000));
+	                viewpane.repaint();
+	            });
+            </script>
+
+
+
+            <h3>
+                <a id="testpage" class="anchor" href="#testpage" aria-hidden="true">
+                    <span class="octicon octicon-link"></span>
+                </a>
+
+
+                Demo: Fit viewpane to both dimensions
+            </h3>
+            <!--
+
+
+				DEMO: FIT BOTH DIMENSIONS
+
+
+            -->
+            <style type="text/css">
+	            #js-fit-both-camera {
+	                position: relative;
+	                overflow: hidden;
+	                width: 660px;
+	                height: 200px;
+	                box-sizing: border-box;
+	                border: 1px solid #ccc;
+	            }
+	            #js-fit-both-viewpane {
+	                position: absolute;
+	                width: 2048px;
+	                height: 1364px;
+	                background: #fff url("./images/city.jpg") no-repeat;
+	            }
+            </style>
+
+            <div id="js-fit-both-camera">
+                <div id="js-fit-both-viewpane"></div>
+            </div>
+
+            <script type="text/javascript">
+	            window.addEventListener("DOMContentLoaded", function() {
+	                var viewpane = new Viewpane("js-fit-both-camera", "js-fit-both-viewpane", {
+	                	typeOfFocus: "fitBothDimensions"
+	                });
+	                viewpane.setPosition(Viewpane.Vector.create(-690, -550, -2100));
+	                viewpane.repaint();
+	            });
+            </script>
+
+
+        </section>
     </div>
+
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Js-viewpane maintained by <a href="https://github.com/sagold">sagold</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
+        <footer class="inner">
+            <p class="copyright">Js-viewpane maintained by <a href="https://github.com/sagold">sagold</a>
+            </p>
+            <p>Published with <a href="https://pages.github.com">GitHub Pages</a>
+            </p>
+        </footer>
     </div>
 
-    
+</body>
 
-  </body>
 </html>
