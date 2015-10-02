@@ -1,13 +1,17 @@
 # Viewpane
 
-> Simple feelgood pan and zoomable container
+> simple, feelgood, pan and zoomable image or HTML container
 
-This is a small subset of iScroll, offering a container or image that may zoomed and moved within a given range. Changes
-should be a smoother scrolling experience and a more natural (iOS) rubberband. As an addition, this viewpane toys with
-being in 3D space, enabling perspective experiments with css or js.
+
+Viewpane enables an image or any HTML Container to be pan- and zoomable within a given parent container. In some way
+this is a subset of iScroll or comparable script, but it offers a smoother scrolling experience and a more natural
+(iOS) rubberband. Additional, _viewpane_ toys with being in 3D space, enabling perspective experiments with css or js.
 
 
 `bower install viewpane`
+
+
+You can checkout the [demos page](http://sagold.github.io/js-viewpane/) to get an impression what it does.
 
 
 ## usage
@@ -70,7 +74,7 @@ being in 3D space, enabling perspective experiments with css or js.
 
 ## exported utilities
 
-for details see the corresponding sourcefile
+for details see the corresponding sourcefiles.
 
 ```javascript
     // viewpane entity (renderable)
@@ -97,7 +101,8 @@ for details see the corresponding sourcefile
 
     - iOS 9.0.x, `transform-style: preserve-3d` flickering 3d layers
 
-        - overflow hidden destroys preserve3d
-            http://stackoverflow.com/questions/32639639/ios-9-mobile-safari-has-a-blinking-bug-with-transform-scale3d-and-translate3d)
+        - Currently there is no css workaround
+            [@see Stackoverflow](http://stackoverflow.com/questions/32639639/ios-9-mobile-safari-has-a-blinking-bug-with-transform-scale3d-and-translate3d). The attribute `overflow: hidden` does not work with the `transform-style: preserve3d` options.
 
-        - workaround: use js entities instead of css only setup
+        - for the _viewpane_, the only workaround is to use js entities instead of css. See the 
+            [demos page](http://sagold.github.io/js-viewpane/) for details.

@@ -1,20 +1,12 @@
 ## possible features
 
 - usability: on orientation change keep center-position
-- use zoomAt for SnapFrictionAnimation (Currently origins aways from center cause different animations)
-- usability: for type 'Fit Largest': snap to 'Fit both'
-- input: 3d rotation
-- api: animate move to position
-- api options: set initial camera placement
-- internal: use Typescript
-- change perspective tests to use vector implementation; remove geometry
-- sort of snap positions
-- move indicator
-
-
-## tryouts
-
-- do **not** zoom by changing `perspective-origin`
-    - reason: 3d layout for 3d scenes has (of course) flips in perspective
-    - still requires calculation on changing origin
-    - unindentified bug when zooming and changing origin again
+- use zoomAt for SnapFrictionAnimation (Currently, an origin beyond viewport center causes wrong animations)
+- usability: snap-option to both dimensions for type 'Fit Largest'
+- user input support: rotation
+- api: animate setPosition
+- api: set position according to boundaries
+- api options: set initial camera placement, i.e. by a given rectangle
+- internal: possibly integrate Typescript
+- sort of snap to positions
+- move indicator (like a shadow, being larger where possible movement is largest)
