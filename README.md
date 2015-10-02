@@ -51,7 +51,7 @@ You can checkout the [demos page](http://sagold.github.io/js-viewpane/) to get a
 
 ```javascript
     {
-        // friction used on animation to stop user input
+        // friction used on animation to stop user input. Values [0, 1[
         friction: 0.91,             
         // type of valid positions. May also be "fitBothDimensions"
         // Also `Viewpane.FOCUS_TYPE.BOTH` or `Viewpane.FOCUS_TYPE.LARGEST`
@@ -59,7 +59,7 @@ You can checkout the [demos page](http://sagold.github.io/js-viewpane/) to get a
         // The area to focus camera (bound, rubberband)
         // Default: viewpane-element dimensions
         focus: {x: 2048, y: 1024},
-        // perspective of camera. Values 0+. Default 1000  
+        // perspective of camera. Values [0, Infinity[. Default 1000  
         perspective: 1000,      
         // perspective origin. Values [0, 1]. Default (0.5, 0.5)    
         origin: {x: 0.5, y: 0.5}
