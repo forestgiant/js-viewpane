@@ -68,6 +68,22 @@ being in 3D space, enabling perspective experiments with css or js.
 - [support of 3d transforms](http://caniuse.com/#feat=transforms3d)
 
 
+## exported utilities
+
+for details see the corresponding sourcefile
+
+```javascript
+    // viewpane entity (renderable)
+    Viewpane.Entity
+    // animation loop
+    Viewpane.Loop
+    // vector class
+    Viewpane.Vector
+    // types of viewpane bounds
+    Viewpane.FOCUS_TYPE
+```
+
+
 ## performance
 
 - ensure images are a multiple of 2 (i.e. use 2048x1024, but NOT 2048x1025). Especially on iOS
