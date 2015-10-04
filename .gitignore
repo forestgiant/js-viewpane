@@ -33,3 +33,4 @@ doc-build/
 /checkstyle.xml
 /checkstyle-jshint.xml
 /checkstyle-jscs.xml
+app
