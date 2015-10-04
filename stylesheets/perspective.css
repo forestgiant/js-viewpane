@@ -1,0 +1,65 @@
+.box,
+.plane {
+    display: block;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+#floor {
+    width: 3000px;
+    height: 300px;
+    background: transparent url("../images/sw-floor.jpg") no-repeat;
+    background-size: 100% 100%;
+    transform-origin: top center;
+
+    -webkit-transform: translate3d(0px, 831px, 0px) rotateX(90deg);
+    -moz-transform: translate3d(0px, 831px, 0px) rotateX(90deg);
+    transform: translate3d(0px, 831px, 0px) rotateX(90deg);
+}
+
+#jane {
+    width: 154px;
+    height: 224px;
+    background: transparent url("../images/sw-jane.png") no-repeat;
+
+    -webkit-transform: translate3d(1409px, 436px, 50px) scale(0.58);
+    -moz-transform: translate3d(1409px, 436px, 50px) scale(0.58);
+    transform: translate3d(1409px, 436px, 50px) scale(0.58);
+}
+
+#label {
+
+    font-size: 68px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #eee;
+
+    -webkit-transform: translate3d(2250px, 610px, 1200px);
+    -moz-transform: translate3d(2250px, 610px, 1200px);
+    transform: translate3d(2250px, 610px, 1200px);
+}
+
+.box figure {
+    display: block;
+    position: absolute;
+    /*border: 1px solid black;*/
+    background-size: 100% 100% !important;
+}
+
+.box.column .front {background: url("../images/sw-column-front.jpg") no-repeat;}
+.box.column .left,
+.box.column .right {background: url("../images/sw-column-side.jpg") no-repeat;}
+
+.box.pedestral .top {background: url("../images/sw-pedestral-top.jpg") no-repeat;}
+.box.pedestral .left,
+.box.pedestral .front,
+.box.pedestral .right {background: url("../images/sw-pedestral-side.jpg") no-repeat;}
+
+.box.socket .top {background: url("../images/sw-socket-top.jpg") no-repeat;}
+.box.socket .front {background: url("../images/sw-socket-front.jpg") no-repeat;}
+
+.box.ceiling .front {background: #000 url("../images/sw-ceiling-front.jpg") no-repeat;}
+.box.ceiling .bottom {background: #000 url("../images/sw-ceiling-bottom.jpg") repeat-xy;}
+
+.box.bg .top {background: #000 url("../images/sw-bg-top.jpg") no-repeat;}
+.box.bg .front {background: #000 url("../images/sw-bg-front.jpg") no-repeat;}
