@@ -1,9 +1,9 @@
 "use strict";
 
 
-import { expect } from "chai";
-import Vector from "../../../lib/common/vector";
-import geo from "../../lib/perspective";
+var expect = require("chai").expect;
+var Vector = require("../../../lib/common/vector");
+var geo = require("../../browser/perspective");
 
 
 describe("vector", function () {
