@@ -62,7 +62,9 @@ You can checkout the [demos page](http://sagold.github.io/js-viewpane/) to get a
         // perspective of camera. Values [0, Infinity[. Default 1000  
         perspective: 1000,      
         // perspective origin. Values [0, 1]. Default (0.5, 0.5)    
-        origin: {x: 0.5, y: 0.5}
+        origin: {x: 0.5, y: 0.5},
+        // enable rubberband on z-axis. Default true
+        rubberZ: true
     }
 ```
 
