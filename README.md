@@ -66,6 +66,55 @@ You can checkout the [demos page](http://sagold.github.io/js-viewpane/) to get a
     }
 ```
 
+### events
+
+Event names are also accessible view `Viewpane.EVENT_*`
+
+```javascript
+    
+    var viewpane = new Viewpane("camera", "viewpane", options);
+
+    viewpane.addObserver("onClick", function (event, clickOrigin) {
+        // viewpane has been clicked
+    });
+
+    viewpane.addObserver("onRender", function (position) {
+        // viewpane has updated visually
+    });
+
+    viewpane.addObserver("onUpdate", function (position) {
+        // viewpane has updated calculations
+    });
+
+    viewpane.addObserver("onInputStart", function () {
+        // user input starts
+    });
+
+    viewpane.addObserver("onInputStop", function () {
+        // user input has ended
+    });
+
+    viewpane.addObserver("onEnd", function () {
+        // all animations and input has stopped
+    });
+
+```
+
+
+## api
+
+### `viewpane`
+
+method                              | description
+------------------------------------|--------------------------------------------------------------------
+activate()                          | activate userinteraction (default)
+deactivate()                        | deactivate user interaction
+fit()                               | centers the contents (position, scale) to the viewport
+addObserver(eventName, callback)    | add an event listener (@see events)
+repaint()                           | redraws viewpane
+addEntity(Viewpane.Entity)          | adds another entity which is translated by the viewpane (camera)
+
+
 
 ## requirements
 
