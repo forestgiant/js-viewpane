@@ -1,6 +1,6 @@
 {
   "name": "js-viewpane",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "",
   "scripts": {
     "dist": "grunt dist",
