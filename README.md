@@ -8,6 +8,8 @@ this is a subset of iScroll or comparable script, but it offers a smoother scrol
 (iOS) rubberband. Additional, _viewpane_ toys with being in 3D space, enabling perspective experiments with css or js.
 
 
+`npm install js-viewpane --save`
+
 `bower install viewpane`
 
 
