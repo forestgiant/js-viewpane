@@ -64,4 +64,5 @@ function createColumn(viewpaneEl, x, y, z) {
     pedestral.className += " pedestral";
     setTransform(pedestral, "translate3d(" + (x - 90) + "px, " + (y + h) + "px, " + (z) + "px)");
     viewpaneEl.appendChild(pedestral);
+    return pedestral;
 }

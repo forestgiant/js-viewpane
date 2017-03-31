@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Js-viewpane : feelgood pan and zoomable container">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script type="text/javascript" src="javascripts/viewpane.js"></script>
+    <style type="text/css">
+
+        body,
+        html {
+            height: 100%;
+            background: #000;
+        }
+
+        #page {
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
+    <title>Viewpane</title>
+</head>
+
+<body>
+    <div id="page">
+
+        <!--
+
+
+            DEMO: CSS 3D
+
+
+        -->
+        <style type="text/css">
+            #js-css3d-camera {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+            }
+            #js-css3d-viewpane {
+                position: absolute;
+                width: 3000px;
+                height: 950px;
+                background: url("images/subway.jpg") no-repeat;
+            }
+
+            .box,
+            .plane {
+                transform-style: none;
+            }
+
+            #jane {
+                background-size: cover;
+            }
+        </style>
+
+        <div id="js-css3d-camera">
+            <div id="js-css3d-viewpane"></div>
+            <div id="jane" class="plane"></div>
+            <div id="floor" class="plane"></div>
+        </div>
+
+
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/perspective.css">
+        <script type="text/javascript" src="javascripts/perspective.js"></script>
+        <script type="text/javascript">
+            var viewpane;
+
+            function addColumn(viewpane, parent, x, y, z) {
+                "use strict";
+                var w = columnDimensions.w; var h = columnDimensions.h; var d = columnDimensions.d;
+
+                var pedestral = createBox(260, 40, 260);
+                pedestral.className += " pedestral";
+                parent.appendChild(pedestral);
+                pedestral = new Viewpane.Entity(pedestral);
+                pedestral.setPosition(Viewpane.Vector.create(x - 90, y + h, z));
+                viewpane.addEntity(pedestral);
+
+                var box = createBox(w, h, d);
+                box.className += " column";
+                parent.appendChild(box);
+                box = new Viewpane.Entity(box);
+                box.setPosition(Viewpane.Vector.create(x, y, z));
+                viewpane.addEntity(box);
+            }
+
+            window.addEventListener("load", function () {
+                "use strict";
+
+                var viewportEl = document.getElementById("js-css3d-camera");
+                var viewpaneEl = document.getElementById("js-css3d-viewpane");
+                viewpane = new Viewpane(viewportEl, viewpaneEl, {
+                    origin: {x: 0.5, y: 0.5},
+                    typeOfFocus: "fitBothDimensions"
+                });
+
+                var bg = createBox(3000, 190, 150);
+                bg.className += " bg";
+                viewportEl.appendChild(bg);
+                var bgEntity = new Viewpane.Entity(bg);
+                bgEntity.setPosition(Viewpane.Vector.create(0, 611, 80));
+                viewpane.addEntity(bgEntity);
+
+                var jane = new Viewpane.Entity(document.getElementById("jane"));
+                jane.setPosition(Viewpane.Vector.create(1409, 480, 50));
+                jane.element.style.width = 154 * 0.58 + "px";
+                jane.element.style.height = 224 * 0.58 + "px";
+                viewportEl.appendChild(jane.element); // order is important
+                viewpane.addEntity(jane);
+
+                var floor = new Viewpane.Entity(document.getElementById("floor"));
+                // -webkit-transform: translate3d(0px, 831px, 0px) rotateX(90deg);
+                floor.setPosition(Viewpane.Vector.create(0, 831, 0));
+                floor.setRotation(Viewpane.Vector.create(90, 0, 0));
+                viewportEl.appendChild(floor.element); // order is important
+                viewpane.addEntity(floor);
+
+                var socket = createBox(3000, 30, 300);
+                socket.className += " socket";
+                viewportEl.appendChild(socket);
+                var socketEntity = new Viewpane.Entity(socket);
+                socketEntity.setPosition(Viewpane.Vector.create(0, 830, 360));
+                viewpane.addEntity(socketEntity);
+
+                var y = 160; var z = 360;
+                addColumn(viewpane, viewportEl, 245, y, z);
+                addColumn(viewpane, viewportEl, 805, y, z);
+                addColumn(viewpane, viewportEl, 1146, y, z);
+                addColumn(viewpane, viewportEl, 1711, y, z);
+                addColumn(viewpane, viewportEl, 2271, y, z);
+                addColumn(viewpane, viewportEl, 2802, y, z);
+
+                var ceiling = createBox(3000, 300, 80);
+                ceiling.className += " ceiling";
+                viewportEl.appendChild(ceiling);
+                var ceilingEntity = new Viewpane.Entity(ceiling);
+                ceilingEntity.setPosition(Viewpane.Vector.create(0, -20, 366));
+                viewpane.addEntity(ceilingEntity);
+
+                // viewpane.setPosition(Viewpane.Vector.create(-1200, -150, -250));
+                viewpane.fit();
+                viewpane.repaint();
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>

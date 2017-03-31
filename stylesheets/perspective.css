@@ -20,7 +20,8 @@
 #jane {
     width: 154px;
     height: 224px;
-    background: transparent url("../images/sw-jane.png") no-repeat;
+    background-image: url("../images/sw-jane.png");
+    background-repeat: no-repeat;
 
     -webkit-transform: translate3d(1409px, 436px, 50px) scale(0.58);
     -moz-transform: translate3d(1409px, 436px, 50px) scale(0.58);
