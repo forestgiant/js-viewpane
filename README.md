@@ -6,6 +6,7 @@
 Viewpane enables an image or any HTML Container to be pan- and zoomable within a given parent container. In some way
 this is a subset of iScroll or comparable script, but it offers a smoother scrolling experience and a more natural
 (iOS) rubberband. Additional, _viewpane_ toys with being in 3D space, enabling perspective experiments with css or js.
+No dependencies.
 
 
 `npm install js-viewpane --save`
